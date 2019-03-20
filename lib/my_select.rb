@@ -2,10 +2,8 @@ def my_select(collection)
   i = 0
   selected_elements = []
   while i < collection.length
-    yield collection[i] do |element|
-      if true
-        selected_elements << element
-      end
+    if yield collection[i] == true
+      selected_elements << collection[i]
     end
     i += 1
   end
